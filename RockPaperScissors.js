@@ -13,39 +13,83 @@ function getComputerChoice() {
     }
 }
 
-const computerSelection = getComputerChoice();
-const playerSelection = prompt("Rock, Paper, or Scissors?");
+let userWins = 0;
+let computerWins = 0;
+let draws = 0;
 
 function playRound(playerSelection, computerSelection) {
-    let newPlayerSelection = playerSelection.toLowerCase();
+    const newPlayerSelection = playerSelection.toLowerCase();
+    
 
     if (newPlayerSelection == "rock") {
-        if (computerSelection == "Rock")
+        if (computerSelection == "Rock"){
+            draws += 1;
             return "Draw! You both chose Rock";
-        else if (computerSelection == "Paper")
+        }
+        else if (computerSelection == "Paper"){
+            computerWins += 1;
             return "You Lose! Paper beats Rock";
-        else
+        }
+        else{
+            userWins += 1;
             return "You Win! Rock beats Scissors";
+        }
     }
     else if (newPlayerSelection == "paper") {
-        if (computerSelection == "Rock")
+        if (computerSelection == "Rock"){
+            userWins += 1;
             return "You Win! Paper beats Rock";
-        else if (computerSelection == "Paper")
+        }
+        else if (computerSelection == "Paper"){
+            draws += 1;
             return "Draw! You both chose Paper";
-        else
+        }
+        else{
+            computerWins += 1;
             return "You Lose! Scissors beats Paper";
+        }
     }
     else if (newPlayerSelection == "scissors"){
-        if (computerSelection == "Rock")
+        if (computerSelection == "Rock"){
+            computerWins += 1;
             return "You Lose! Rock beats Scissors";
-        else if (computerSelection == "Paper")
+        }
+        else if (computerSelection == "Paper"){
+            userWins += 1;
             return "You Win! Scissors beats Paper";
-        else
+        }
+        else{
+            draws += 1;
             return "Draw! You both chose Scissors";
+        }
     }
     else {
+        playerSelection = "Invalid";
         return "Invalid user selection";
     }
+    
+    
 }
 
-console.log(playRound(playerSelection, computerSelection));
+
+function game() {
+    
+    for (let i=0; i<5; i++){
+        const computerSelection = getComputerChoice();
+        const playerSelection = prompt("Rock, Paper, or Scissors?");
+        console.log(playRound(playerSelection, computerSelection) + ` ${userWins}-${computerWins}-${draws}` );
+        
+        
+    }
+
+    if (userWins > computerWins) {
+        return "Congrats! You beat the computer in a 5 round game of Rock Paper Scissors"
+    }
+    else if (userWins < computerWins) {
+        return "Sorry! The Computer beat you in a 5 round game of Rock Paper Scissors"
+    }
+    else if (userWins == computerWins){
+        return "You and the Computer tied in a 5 round game of Rock Paper Scissors"
+    }
+}
+console.log(game());
