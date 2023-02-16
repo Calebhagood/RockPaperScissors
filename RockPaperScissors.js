@@ -6,6 +6,10 @@ const roundResults = document.querySelector("#roundResults");
 const gameResults = document.querySelector("#gameResults");
 const playerScore = document.querySelector("#playerScore");
 const computerScore = document.querySelector("#computerScore");
+const resetButton = document.getElementById("resetButton");
+const rockButton = document.getElementById("rock");
+const paperButton = document.getElementById("paper");
+const scissorsButton = document.getElementById("scissors");
 
 
 
@@ -32,6 +36,7 @@ buttons.forEach((button) => {
 
        if (userWins === 5 || computerWins === 5){
         declareWinner();
+        showResetButton();
        }
     });
 });
@@ -124,4 +129,26 @@ function declareWinner() {
     if (computerWins === 5){
         gameResults.innerHTML = "NOOOO! The Computer beat you in Rock Paper Scissors";
     }
+
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+
+}
+
+function resetGame() {
+    userWins = 0;
+    playerScore.innerHTML = "0";
+    computerWins = 0;
+    computerScore.innerHTML = "0";
+    roundResults.innerHTML = "";
+    gameResults.innerHTML = "";
+    resetButton.classList.toggle("hide");
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
+}
+
+function showResetButton(){
+    resetButton.classList.toggle("hide");
 }

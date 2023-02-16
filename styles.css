@@ -1,0 +1,60 @@
+body {
+    background-color: #5373dd;
+    color: #fff;
+    font-family: 'Knewave', 'Tahoma';  
+}
+
+h1 {
+    text-align: center;
+}
+
+p{
+    text-align: center;
+    font-family:"Chelsea Market", cursive;
+}
+
+button { 
+    font-family:"Chelsea Market", cursive;
+}
+
+#btn-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 50px;
+}
+
+.gameButton {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.hide {
+    display: none;
+    
+}
+
+#endButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+}
+
+@keyframes appear {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+#resetButton {
+    
+    width: 200px;
+    height: 50px;
+    color: black;
+    background-color: transparent;
+    border: 2px solid black;
+    line-height: 1em;
+    opacity: 0;
+    animation: appear 3s 500ms forwards;
+    
+}
+

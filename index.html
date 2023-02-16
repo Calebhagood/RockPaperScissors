@@ -5,18 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="RockPaperScissors.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Knewave&display=swap" rel="stylesheet">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <div id="btn-container">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    <h1>Rock Paper Scissors</h1>
+    <div id="main">
+        <div class="left"></div>
+        <div id="btn-container">
+            <button id="rock" class="gameButton"><img src="/images/rock.png" alt="Rock"></button>
+            <button id="paper" class="gameButton"><img src="/images/paper.png" alt="Paper"></button>
+            <button id="scissors" class="gameButton"><img src="/images/scissors.png" alt="Scissors"></button>
+        </div>
+        <div class="right"></div>
     </div>
     <div id="results">
         <p id="displayScore"><span id="playerScore">0</span> - <span id="computerScore">0</span></p>
         <p id="roundResults"></p>
         <p id="gameResults"></p>
+    </div>
+    <div id="endButtons">
+        <button id="resetButton" class="hide" onclick="resetGame()"><h3>Reset Game</h3></button>
     </div>
 </body>
 </html>
