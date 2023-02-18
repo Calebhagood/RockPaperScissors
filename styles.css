@@ -2,10 +2,22 @@ body {
     background-color: #5373dd;
     color: #fff;
     font-family: 'Knewave', 'Tahoma';  
+    margin-top: 0;
+    
 }
 
 h1 {
     text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+}
+
+#displayScore {
+    position: absolute;
+    left: 475px;
+    top: 20px;
+    color: black;
 }
 
 p{
@@ -17,16 +29,184 @@ button {
     font-family:"Chelsea Market", cursive;
 }
 
+#gameBackground {
+    position: relative;
+    display:block;
+    margin: auto;
+    width: 1000px;
+    height: 500px;
+    background-color: lightskyblue;
+    border: 3px solid black;
+    color: black;
+    text-align: center;
+}
+
 #btn-container {
     display: flex;
     justify-content: center;
     align-content: center;
     gap: 50px;
+
+}
+
+#HUD {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin:2px auto;
+    
+}
+
+#left, #right, #middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: -2px;
+    justify-content: flex-start;
+}
+
+h3 {
+    margin: 0 auto;
+    font-family:"Chelsea Market", cursive;
+}
+
+#leftText {
+    margin-left: 63px;
+}
+
+#rightText {
+    margin-right: 52px;
+}
+
+#leftHealthBar, #rightHealthBar {
+    background-color: red;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    position: relative;
+}
+
+#leftHealthBar {
+    margin-left: 63px;
+}
+
+#rightHealthBar {
+    margin-right: 52px;
+}
+
+@keyframes healthLost {
+    0% {width: 20%;}
+    100% {width: 0%;}
+}
+
+.healthLost {
+    animation: healthLost 2s forwards;
+}
+
+#leftHealthSection5 {
+    position: absolute;
+    background-color: green;
+    top: 0;
+    left: 80%;
+    margin: 0;
+    height: 100%;
+    width: 20%;
+}
+
+#leftHealthSection4 {
+    position: absolute;
+    background-color: green;
+    top: 0;
+    left: 60%;
+    margin: 0;
+    height: 100%;
+    width: 20%;
+}
+
+#leftHealthSection3 {
+    position: absolute;
+    background-color: green;
+    top: 0;
+    left: 40%;
+    margin: 0;
+    height: 100%;
+    width: 20%;
+}
+
+#leftHealthSection2 {
+    position: absolute;
+    background-color: green;
+    top: 0;
+    left: 20%;
+    margin: 0;
+    height: 100%;
+    width: 20%;
+}
+
+#leftHealthSection1 {
+    position: absolute;
+    background-color: green;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 100%;
+    width: 20%;
+}
+
+#rightHealthSection5 {
+    position: absolute;
+    background-color: green;
+    top: 0;
+    left: 80%;
+    margin: 0;
+    height: 100%;
+    width: 20%;
+}
+
+#rightHealthSection4 {
+    position: absolute;
+    background-color: green;
+    top: 0;
+    left: 60%;
+    margin: 0;
+    height: 100%;
+    width: 20%;
+}
+
+#rightHealthSection3 {
+    position: absolute;
+    background-color: green;
+    top: 0;
+    left: 40%;
+    margin: 0;
+    height: 100%;
+    width: 20%;
+}
+
+#rightHealthSection2 {
+    position: absolute;
+    background-color: green;
+    top: 0;
+    left: 20%;
+    margin: 0;
+    height: 100%;
+    width: 20%;
+}
+
+#rightHealthSection1 {
+    position: absolute;
+    background-color: green;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 100%;
+    width: 20%;
 }
 
 .gameButton {
-    background-color: transparent;
-    border: 1px solid #fff;
+    background-color: rgb(83, 83, 83);
+    border: 1px solid #000;
+    
 }
 
 .hide {

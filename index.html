@@ -13,7 +13,50 @@
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
-    <div id="main">
+    <div id="gameBackground">
+        <img src="/images/RPSGameVisual.png" alt="Game Visual" id="gameVisual">
+        <h2 id="displayScore"><span id="playerScore">0</span> - <span id="computerScore">0</span></h2>
+    </div>
+    <div id="HUD">
+        <div id="left" >
+            <div id="leftHealthBar" class="leftHealthBar">
+                <div id="leftHealthSection1" class="healthSections"></div>
+                <div id="leftHealthSection2" class="healthSections"></div>
+                <div id="leftHealthSection3" class="healthSections"></div>
+                <div id="leftHealthSection4" class="healthSections"></div>
+                <div id="leftHealthSection5" class="healthSections"></div>
+            </div>
+            <div id="leftText">
+                <h3 id="username">You</h3>
+            </div>
+        </div>
+        <div id="middle">
+            <div id="btns">
+                <button id="rock" class="gameButton"><img src="/images/rockButton.png" alt="Rock"></button>
+                <button id="paper" class="gameButton"><img src="/images/paperButton.png" alt="Paper"></button>
+                <button id="scissors" class="gameButton"><img src="/images/scissorsButton.png" alt="Scissors"></button>
+            </div>
+            <div id="middleText">
+                <h3 id="weaponsText">Choose Your Weapon</h3>
+            </div>
+        </div>
+        <div id="right">
+            <div id="rightHealthBar">
+                <div id="rightHealthSection1" class="healthSections"></div>
+                <div id="rightHealthSection2" class="healthSections"></div>
+                <div id="rightHealthSection3" class="healthSections"></div>
+                <div id="rightHealthSection4" class="healthSections"></div>
+                <div id="rightHealthSection5" class="healthSections"></div>
+            </div>
+            <div id="rightText">
+                <h3 id="computername">Computer</h3>
+            </div>
+        </div>
+    </div>
+
+    <p id="roundResults"></p>
+    <p id="gameResults"></p>
+    <!--<div id="main">
         <div class="left"></div>
         <div id="btn-container">
             <button id="rock" class="gameButton"><img src="/images/rock.png" alt="Rock"></button>
@@ -29,6 +72,6 @@
     </div>
     <div id="endButtons">
         <button id="resetButton" class="hide" onclick="resetGame()"><h3>Reset Game</h3></button>
-    </div>
+    </div>-->
 </body>
 </html>
