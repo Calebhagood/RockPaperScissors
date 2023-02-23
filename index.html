@@ -16,7 +16,26 @@
     <div id="gameBackground">
         <img src="/images/RPSGameVisual.png" alt="Game Visual" id="gameVisual">
         <h2 id="displayScore"><span id="playerScore">0</span> - <span id="computerScore">0</span></h2>
+        
+        <!--shows up after the game is over-->
+        <div id="overlay" class="hide">
+            <div id="endButtons" class="hide">
+                <h2 id="gameResults"></h2>
+                <button id="resetButton" class="hide" onclick="resetGame()"><h3 id="resetButtonText">Reset Game</h3></button>
+            </div>
+        </div>
+
+        <!--Pictures used for choices and game animations-->
+        <div id="gameAnimations">
+            <div id="userRock" class=""><img src="images/rock.png"></div>
+            <div id="userPaper" class=""><img src="images/paper.png"></div>
+            <div id="userScissors" class=""><img src="images/scissors.png"></div>
+            <div id="computerRock" class=""><img src="images/rock.png"></div>
+            <div id="computerPaper" class=""><img src="images/paper.png"></div>
+            <div id="computerScissors" class=""><img src="images/scissors.png"></div>
+        </div>
     </div>
+    <!--Elements located under the game visual that make up HUD-->
     <div id="HUD">
         <div id="left" >
             <div id="leftHealthBar" class="leftHealthBar">
@@ -30,6 +49,7 @@
                 <h3 id="username">You</h3>
             </div>
         </div>
+        <!--Weapons-->
         <div id="middle">
             <div id="btns">
                 <button id="rock" class="gameButton"><img src="/images/rockButton.png" alt="Rock"></button>
@@ -55,23 +75,6 @@
     </div>
 
     <p id="roundResults"></p>
-    <p id="gameResults"></p>
-    <!--<div id="main">
-        <div class="left"></div>
-        <div id="btn-container">
-            <button id="rock" class="gameButton"><img src="/images/rock.png" alt="Rock"></button>
-            <button id="paper" class="gameButton"><img src="/images/paper.png" alt="Paper"></button>
-            <button id="scissors" class="gameButton"><img src="/images/scissors.png" alt="Scissors"></button>
-        </div>
-        <div class="right"></div>
-    </div>
-    <div id="results">
-        <p id="displayScore"><span id="playerScore">0</span> - <span id="computerScore">0</span></p>
-        <p id="roundResults"></p>
-        <p id="gameResults"></p>
-    </div>
-    <div id="endButtons">
-        <button id="resetButton" class="hide" onclick="resetGame()"><h3>Reset Game</h3></button>
-    </div>-->
+    
 </body>
 </html>

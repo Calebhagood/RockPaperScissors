@@ -11,30 +11,37 @@ h1 {
     margin-top: 0;
     padding-top: 0;
     margin-bottom: 0;
+    cursor: default;
 }
 
 #displayScore {
     position: absolute;
-    left: 475px;
+    left: 571px;
     top: 20px;
     color: black;
+}
+
+#roundResults, #gameResults {
+    text-align: center;
 }
 
 p{
     text-align: center;
     font-family:"Chelsea Market", cursive;
+    cursor: default;
 }
 
 button { 
     font-family:"Chelsea Market", cursive;
+    cursor: pointer;
 }
 
 #gameBackground {
     position: relative;
     display:block;
     margin: auto;
-    width: 1000px;
-    height: 500px;
+    width: 1200px;
+    height: 600px;
     background-color: lightskyblue;
     border: 3px solid black;
     color: black;
@@ -52,7 +59,7 @@ button {
 #HUD {
     display: flex;
     justify-content: space-between;
-    max-width: 1000px;
+    max-width: 1200px;
     margin:2px auto;
     
 }
@@ -68,30 +75,31 @@ button {
 h3 {
     margin: 0 auto;
     font-family:"Chelsea Market", cursive;
+    cursor: default;
 }
 
 #leftText {
-    margin-left: 63px;
+    margin-left: 35px;
 }
 
 #rightText {
-    margin-right: 52px;
+    margin-right: 30px;
 }
 
 #leftHealthBar, #rightHealthBar {
     background-color: red;
-    width: 100px;
+    width: 200px;
     height: 20px;
     border: 1px solid black;
     position: relative;
 }
 
 #leftHealthBar {
-    margin-left: 63px;
+    margin-left: 35px;
 }
 
 #rightHealthBar {
-    margin-right: 52px;
+    margin-right: 30px;
 }
 
 @keyframes healthLost {
@@ -99,8 +107,8 @@ h3 {
     100% {width: 0%;}
 }
 
-.healthLost {
-    animation: healthLost 2s forwards;
+.healthLostAnimation {
+    animation: healthLost 1.0s forwards;
 }
 
 #leftHealthSection5 {
@@ -203,10 +211,23 @@ h3 {
     width: 20%;
 }
 
+
+
 .gameButton {
+    margin-top: 5px;
+    margin-bottom: 3px;
     background-color: rgb(83, 83, 83);
     border: 1px solid #000;
-    
+}
+
+.gameButton:hover {
+    background-color: gray;
+    transform: scale(1.1); 
+}
+
+#btns{
+    display: flex;
+    gap: 10px;
 }
 
 .hide {
@@ -226,15 +247,107 @@ h3 {
     100% {opacity: 1;}
 }
 #resetButton {
-    
+    position: absolute;
+    top: 350px;
     width: 200px;
     height: 50px;
-    color: black;
-    background-color: transparent;
+    color: white;
+    background-color: black;
     border: 2px solid black;
     line-height: 1em;
     opacity: 0;
     animation: appear 3s 500ms forwards;
-    
 }
 
+#resetButtonText{
+    cursor: pointer;
+}
+
+#gameOverText {
+    position: absolute;
+    top: 200px;
+    color: white;
+    font-size: 50px;
+}
+
+@keyframes BigtoSmall {
+    0% {
+        font-size: 200px;
+    }
+    100% {
+        font-size: 100px;
+    }
+}
+
+#gameResults {
+    position: absolute;
+    top: 150px;
+    color: white;
+    animation: BigtoSmall 1.5s forwards;
+    margin: auto 100px;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    animation: appear 1s forwards;
+    overflow: hidden;
+}
+
+
+
+#userRock, #userPaper, #userScissors {
+    position: absolute;
+    top: 150px;
+    left: 300px;
+    opacity: 0;
+}
+
+#computerRock, #computerPaper, #computerScissors {
+    position: absolute;
+    top: 150px;
+    right: 300px;
+    opacity: 0;
+}
+.win{
+    animation: Win 1.25s forwards;
+}
+@keyframes Win {
+    0%{
+        opacity: 1;
+    }
+    15%{
+        opacity: 1;
+        transform: scale(1.0);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    90%{
+        transform: scale(1.0);
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.loss{
+    animation: Loss 1.25s forwards;
+}
+
+@keyframes Loss {
+    0%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
