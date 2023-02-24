@@ -27,6 +27,11 @@ const userScissors = document.getElementById("userScissors");
 const computerRock = document.getElementById("computerRock");
 const computerPaper = document.getElementById("computerPaper");
 const computerScissors = document.getElementById("computerScissors");
+const fullscreenBtn = document.getElementById("fullscreenBtn");
+const nonFullscreenPage = document.documentElement;
+//Fullscreen.html
+const exitFullscreenBtn = document.getElementById("exitFullscreenBtn");
+const fullscreenPage = document.documentElement;
 
 
 //used to get random computer choice
@@ -298,3 +303,23 @@ function removeAnimations() {
     computerPaper.classList.remove("loss");
     computerScissors.classList.remove("loss");
 }
+
+function openFullscreen() {
+    if (nonFullscreenPage.requestFullscreen) {
+        nonFullscreenPage.requestFullscreen();
+    } else if (nonFullscreenPage.webkitRequestFullscreen) { /* Safari */
+    nonFullscreenPage.webkitRequestFullscreen();
+    } else if (nonFullscreenPage.msRequestFullscreen) { /* IE11 */
+    nonFullscreenPage.msRequestFullscreen();
+    }
+  }
+
+  function closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+      document.msExitFullscreen();
+    }
+  }

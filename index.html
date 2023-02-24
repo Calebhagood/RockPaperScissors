@@ -12,16 +12,20 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
+    <div id="header">
+        <h1 id="title">Rock Paper Scissors</h1>
+        <button id="fullscreenBtn" onclick="openFullscreen()">Fullscreen</button>
+    </div>
     <div id="gameBackground">
         <img src="./images/RPSGameVisual.png" alt="Game Visual" id="gameVisual">
         <h2 id="displayScore"><span id="playerScore">0</span> - <span id="computerScore">0</span></h2>
-        
+        <button id="exitFullscreenBtn" onclick="closeFullscreen()">Exit Fullscreen</button>
         <!--shows up after the game is over-->
         <div id="overlay" class="hide">
             <div id="endButtons" class="hide">
                 <h2 id="gameResults"></h2>
                 <button id="resetButton" class="hide" onclick="resetGame()"><h3 id="resetButtonText">Reset Game</h3></button>
+                <button id="exitFullscreenBtn2" onclick="closeFullscreen()">Exit Fullscreen</button>
             </div>
         </div>
 
